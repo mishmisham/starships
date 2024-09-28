@@ -24,8 +24,9 @@ const debounced = ref(null);
 const emit = defineEmits('setReadyValue');
 const starshipStore = useStarshipsStore();
 
+
 const runSearch = async(query, stringify=true)=>{
-    clearTimeout(debounced);
+    clearTimeout(debounced.value);
     emit('setReadyValue', false);
     debounced.value = setTimeout(async () => {
         await starshipStore.searchStarships(query, stringify);
