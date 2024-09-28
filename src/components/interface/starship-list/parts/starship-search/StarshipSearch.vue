@@ -32,7 +32,7 @@ const runSearch = async(query, stringify=true)=>{
         await starshipStore.searchStarships(query, stringify);
         setTimeout(() => {
             emit('setReadyValue', true);
-        }, 250)
+        }, 250);
     }, 500);
 }
 

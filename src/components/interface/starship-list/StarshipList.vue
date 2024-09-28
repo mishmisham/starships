@@ -40,7 +40,7 @@ const starshipStore = useStarshipsStore();
 
 const setReadyValue = (value) => {
     ready.value = value;
-}
+};
 
 onBeforeMount(async() => {
     await starshipStore.searchStarships();
