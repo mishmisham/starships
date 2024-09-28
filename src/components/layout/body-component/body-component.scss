@@ -1,0 +1,13 @@
+@import '@/styles/variables.scss';
+
+.content {
+    @include flexbox;
+    max-width: $maxBodyWidth;
+    margin: 0 auto;
+    padding:12px 24px 48px;
+
+    &-wrapper {
+        @include flexbox(column);
+        margin: 0 auto;
+    }
+}

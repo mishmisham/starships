@@ -1,0 +1,13 @@
+@import '@/styles/variables.scss';
+
+.starship-list {
+    @include flexbox(column, flex-start, flex-start);
+
+    h3 {
+        width: 100%;
+        @include flexbox();
+        color: darken($textColor, 30);
+        font-size: 16px;
+        font-weight: 400;
+    }
+}

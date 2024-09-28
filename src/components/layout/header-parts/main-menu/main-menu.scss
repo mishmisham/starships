@@ -1,0 +1,31 @@
+@import '@/styles/variables.scss';
+.main-menu {
+
+  a {
+    @include flexbox(column);
+
+    span {
+      color: lighten($itemBorderColor, 10);
+      transition: $hoverAnimationSpeed;
+    }
+
+    svg {
+      width: 38px;
+      height: 38px;
+
+      path {
+        fill: $itemBorderColor;
+        transition: $hoverAnimationSpeed;
+      }
+    }
+
+    &:hover {
+      span {
+        color: lighten($itemBorderColor, 20);
+      }
+      path {
+        fill: lighten($itemBorderColor, 20);
+      }
+    }
+  }
+}

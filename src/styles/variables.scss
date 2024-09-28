@@ -1,0 +1,19 @@
+$maxBodyWidth: 564px;
+$background: #070e17;
+$selectedTextColor: #9D6FFF;
+$textColor: #92bed5;
+$darkTextColor: #070e17;
+
+$itemBorderColor: rgb(73, 106, 149);
+
+$hoverAnimationSpeed: .15s ease-in-out;
+
+@mixin flexbox($direction: row, $justify: center, $align: center, $width: 100%) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  align-content: $align;
+  flex-direction: $direction;
+  width: $width;
+}
+ 

@@ -1,0 +1,25 @@
+@import '@/styles/variables.scss';
+
+.starship-search {
+    @include flexbox(column, flex-start, flex-start);
+    background: lighten($background, 4);
+    margin-bottom: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    input {
+        padding: 12px 24px 8px;
+    }
+
+    &_inner {
+        @include flexbox();
+        position: relative;
+    }
+
+    .easy-pagination {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

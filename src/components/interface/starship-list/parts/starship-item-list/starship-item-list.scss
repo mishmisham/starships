@@ -1,0 +1,5 @@
+@import '@/styles/variables.scss';
+
+.starship-item-list {
+    @include flexbox(column, flex-start, flex-start);
+}

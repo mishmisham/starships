@@ -1,0 +1,55 @@
+@import '@/styles/variables.scss';
+
+.container {
+    @include flexbox(column, center, flex-start);
+    position: relative;
+    padding: 0 24px;
+    border: 1px solid $itemBorderColor;
+    transition: $hoverAnimationSpeed;
+    min-height: 75px;
+
+    &-wrapper {
+        @include flexbox(column, center, flex-start);
+
+        &--backgrounded {
+            background: transparentize($itemBorderColor, 0.9);
+        }
+    }
+
+    &_inner {
+        padding: 24px 0;
+        width: 100%;
+    }
+
+    &-corner {
+        position: absolute;
+        width: 29px;
+        height: 16px;
+        background: $background;
+        border-bottom: 1px solid $itemBorderColor;
+        transition: $hoverAnimationSpeed;
+        z-index: 1;
+
+        &--topright {
+            top: -4px;
+            right: -10px;
+            transform: rotate(45deg);
+        }
+        &--topleft {
+            top: -4px;
+            left: -10px;
+            transform: rotate(-45deg);
+        }
+        &--bottomleft {
+            bottom: -4px;
+            left: -10px;
+            transform: rotate(225deg);
+        }
+        &--bottomright {
+            bottom: -4px;
+            right: -10px;
+            transform: rotate(-225deg);
+        }
+    }
+
+}

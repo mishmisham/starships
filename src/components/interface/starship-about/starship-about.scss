@@ -1,0 +1,110 @@
+@import '@/styles/variables.scss';
+
+.starship-about {
+    @include flexbox(column, flex-start, flex-start);
+    margin-top: 24px;
+
+    .container-wrapper {
+        margin-bottom: 24px;
+    }
+
+    &_title {
+        @include flexbox(column);
+        margin-bottom: 56px;
+
+        @media screen and (max-width: 500px) {
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 100;
+            margin-bottom: 6px;
+        }
+
+        &-starship-class {
+            font-size: 10px;
+            font-weight: 800;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        &-manufacturer {
+            background: #92bed5;
+            color: $background;
+            padding: 2px 24px;
+            text-align: center;
+            font-size: 12px;
+            margin: 12px auto 0;
+            font-weight: 400;
+        }
+    }
+
+    &_main-characterisitics {
+
+        margin-bottom: 16px;
+        
+        h3 {
+            width: 100%;
+            text-align: center;
+            font-weight: 400;
+            margin: 8px auto 24px;
+            line-height: 24px;
+            font-size: 22px;
+        }
+
+        p {
+            @include flexbox();
+            padding: 8px 0;
+            margin: 0 auto 0;
+            width: calc(100% - 48px);
+            border-bottom: 0.5px solid transparentize($itemBorderColor, 0.9);
+           
+            @media screen and (max-width: 500px) {
+                @include flexbox(column);   
+                margin: 0;
+            }
+
+            b {
+                @include flexbox(row, flex-start);
+                width: 30%;
+                max-width: 150px;
+                font-size: 12px;
+                letter-spacing: .5px;
+                padding-right: 12px;
+
+                @media screen and (max-width: 500px) {
+                    @include flexbox(row, center);
+                    padding-right: 0;
+                    margin-bottom: 8px;
+                    max-width: 100%;
+                }
+            }
+
+            span {
+                @include flexbox(row, flex-start);
+                width: 70%;
+                max-width: calc(100% - 150px);
+                font-size: 12px;
+                letter-spacing: 1.15px;
+
+                @media screen and (max-width: 500px) {
+                    @include flexbox(row, center);
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    &_cost {
+        padding: 0 24px;
+        @include flexbox(row, space-between);
+
+        @media screen and (max-width: 500px) {
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,141 @@
+@import '@/styles/variables.scss';
+
+.starship-item-list_item {
+    @include flexbox(column, center, flex-start);
+    position: relative;
+    transition: $hoverAnimationSpeed;
+
+    &-wrapper {
+        @include flexbox(column, center, flex-start);
+        margin-bottom: 12px;
+
+        &:hover {
+            // border: 1px solid lighten($itemBorderColor, 15);
+
+            .starship-item-list_item-name {
+                span {
+                    border-bottom: 2px solid lighten($itemBorderColor, 2);
+                }
+            }
+
+            .container {
+                border: 1px solid lighten($itemBorderColor, 15);
+            }
+
+            .container-corner,
+            .starship-item-list_item-type,
+            .starship-item-list_item-corner {
+                border-bottom: 1px solid lighten($itemBorderColor, 15);
+            }
+
+            .starship-item-list_item-type {
+                background: lighten($itemBorderColor, 15);
+            }
+
+            .starship-item-list_item-params {
+                background: rgba(0,0,0,.15);
+                border-top: 1px solid lighten($itemBorderColor, 15);
+            }
+        }
+    }
+
+    &-name {
+        margin-top: 2px;
+        margin-bottom: 2px;
+
+        @media screen and (max-width: 500px) {
+            margin-top: 12px;
+            margin-bottom: 8px;
+        }
+
+        span {
+            color: lighten($textColor, 10);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-bottom: 2px solid $itemBorderColor;
+            transition: $hoverAnimationSpeed;
+            padding-bottom: 1px;
+        }
+    }
+
+    &-manufacturer span {
+        font-size: 12px;
+        font-weight: 600;
+        color: darken($textColor, 10);
+    }
+
+    &-model {
+        margin-top: -6px;
+        margin-bottom: 2px;
+
+        @media screen and (max-width: 500px) {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        span {
+            font-size: 11px;
+            font-weight: 400;
+            color: darken($textColor, 15);
+        }
+    }
+
+    &-type {
+        position: relative;
+        transition: $hoverAnimationSpeed;
+        padding: 1px 36px 2px;
+        background:  darken($itemBorderColor, 5);
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0 -24px auto auto;
+        border-bottom: 1px solid $itemBorderColor;
+
+        span {
+            color: $darkTextColor;
+        }
+    }
+
+    &-params {
+        display: flex;
+        font-size: 10px;
+        margin: 2px -24px auto;
+        width: calc(100% + 48px);
+        padding: 2px 36px 3px 0;
+        border-top: 1px solid $itemBorderColor;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        transition: $hoverAnimationSpeed;
+
+        span {
+            margin: auto 0 auto 8px;
+
+            @media screen and (max-width: 500px) {
+                margin: 2px 0 2px 14px;
+            }
+        }
+        u {
+            color: $textColor;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        b {
+            color: darken($textColor, 10);
+        }
+    }
+
+    &-corner {
+        position: absolute;
+        width: 29px;
+        height: 16px;
+        background: $background;
+        border-bottom: 1px solid $itemBorderColor;
+        transition: $hoverAnimationSpeed;
+
+        &--bottomleft {
+            bottom: -4px;
+            left: -9px;
+            transform: rotate(225deg);
+        }
+    }
+}

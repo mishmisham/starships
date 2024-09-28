@@ -1,0 +1,38 @@
+@import '@/styles/variables.scss';
+.easy-pagination {
+    @include flexbox();
+    width: auto;
+
+    button {
+        background: none;
+        outline: none;
+        cursor: pointer;
+        @include flexbox();
+        width: 35.5px;
+        height: 40.5px;
+        border: 0;
+        background: $itemBorderColor;
+        transition: $hoverAnimationSpeed;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            path {
+                fill: $background;
+            }
+        }
+
+        &:hover {
+            background: lighten($itemBorderColor, 15);
+        }
+
+        &:disabled {
+            background: darken($itemBorderColor, 20);
+            cursor: not-allowed;
+
+            path {
+                fill: lighten($itemBorderColor, 10);
+            }
+        }
+    }
+}
