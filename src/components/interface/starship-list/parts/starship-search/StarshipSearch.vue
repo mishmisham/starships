@@ -6,8 +6,8 @@
             placeholder="Search starship"
         )
         easy-pagination(
-            @back="e=>runSearch(starshipStore.previous, false)"
-            @next="e=>runSearch(starshipStore.next, false)"
+            @back="e=>runSearch(starshipStore.previous)"
+            @next="e=>runSearch(starshipStore.next)"
             :enableBack="starshipStore.previous && ready"
             :enableNext="starshipStore.next && ready"
         )
@@ -24,12 +24,11 @@ const debounced = ref(null);
 const emit = defineEmits('setReadyValue');
 const starshipStore = useStarshipsStore();
 
-
-const runSearch = async(query, stringify=true)=>{
+const runSearch = async(query)=>{
     clearTimeout(debounced.value);
     emit('setReadyValue', false);
     debounced.value = setTimeout(async () => {
-        await starshipStore.searchStarships(query, stringify);
+        await starshipStore.searchStarships(query);
         setTimeout(() => {
             emit('setReadyValue', true);
         }, 250);

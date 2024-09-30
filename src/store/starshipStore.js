@@ -9,8 +9,8 @@ export const useStarshipsStore = defineStore('starsipsStore', {
     previous: null,
   }),
   actions: {
-    async searchStarships(params, stringify=true) {
-        const list = await getAllStarships(params, stringify);
+    async searchStarships(params) {
+        const list = await getAllStarships(params);
         const {
           results,
           count,
